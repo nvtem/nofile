@@ -1,0 +1,10 @@
+Allow from all
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+Options -Indexes
+
+php_value short_open_tag 1

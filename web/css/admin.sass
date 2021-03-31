@@ -1,0 +1,113 @@
+@import "mixins"
+
+.login-box
+    min-width: 200px
+    max-width: 350px
+    margin: 20px auto 0 auto
+    border: 1px solid #888888
+    
+    .title
+        background-color: #333333
+        color: #FFFFFF
+        padding: 20px
+        font-size: 18px
+        
+    .body
+        padding: 40px 20px 30px
+
+        .input-label
+            display: block
+
+        .password-input
+            margin-top: 10px
+            width: 100%
+
+        .submit-btn
+            margin-top: 25px
+            background-color: #F8F8F8
+            border-color: #888888
+            
+            &:hover
+                background-color: #eeeeee
+
+        .help-block-error
+            margin-top: 10px
+
+.admin-header
+    background-color: #333333
+    text-align: center
+    padding-top: 20px
+    padding-bottom: 20px
+
+    .title
+        font-size: 18px
+        color: white
+
+    .logout-btn
+        margin-top: 15px
+
+
+.admin-main
+    .inner
+        +inner(2500px)
+        padding-top: 60px
+
+    .title
+        font-size: 18px
+        text-align: center
+        font-weight: 100
+
+    .filesets-table
+        width: 100%
+        margin-top: 30px
+
+        tr:hover
+            background-color: #F2F2F2
+        
+        td, th
+            text-align: center
+            padding: 10px
+            white-space: nowrap
+
+        thead
+            tr
+                background-color: #f2f2f2
+            th
+                font-weight: 900
+                a
+                    color: #AAAAAA
+                    font-size: 12px
+                    &:hover
+                        color: #666666
+
+        td.files
+            text-align: left
+
+        td.files a, td.id a
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+
+        td.actions a
+            text-decoration: underline
+            &:hover
+                text-decoration: none
+
+    .pagination
+        margin-top: 30px
+        text-align: center
+        margin-bottom: 50px
+
+        li
+            display: inline-block
+
+        li a
+            display: inline-block
+            border: 1px solid #000
+            padding: 5px 10px
+
+        li a:hover, li.active a
+            background-color: #DDD
+
+        li.disabled
+            display: none

@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  apache-php:
+    container_name: nofile-apache-php
+    build:
+      context: ./dockerfiles
+      dockerfile: apache-php
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    restart: always
+
+  mysql:
+    container_name: nofile-mysql
+    build:
+      context: ./dockerfiles
+      dockerfile: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: nofile
