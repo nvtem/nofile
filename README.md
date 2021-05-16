@@ -1,9 +1,6 @@
 # nofile
 Simple file sharing web service. Designed with Yii 2.
 
-## Demo
-[Click](http://w74786ld.beget.tech/nofile/web)
-
 ## Install
 1. Make sure that you have Node.js and Docker installed
 2. Configure ```config/params.php```
