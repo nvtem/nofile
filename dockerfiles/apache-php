@@ -10,3 +10,10 @@ RUN docker-php-ext-configure zip --with-libzip
 RUN docker-php-ext-install pdo pdo_mysql mysqli zip
 
 RUN mkdir -p /root/.composer && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+CMD chmod a+w -R /var/www/html \
+	&& composer i \
+	&& chmod +x ./wait-for-it.sh \
+	&& ./wait-for-it.sh -t 3600 mysql:3306 \
+	&& php yii migrate --interactive=0 \
+	&& /usr/sbin/apachectl -D FOREGROUND
